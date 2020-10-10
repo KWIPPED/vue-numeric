@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://unpkg.com/accounting-js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="../dist/vue-numeric.min.js"></script>
+	</head>
+	<body>
+		<div id="vapp">
+			{{val}}<br/>
+			{{0==null}}<br/>
+			{{0===null}}<br/>
+			<vue-numeric currency="$" separator="," :value="237" placeholder="number" v-model="val" :precision=2></vue-numeric>
+			<button @click="val=2342">Assign</button>
+		</div>
+	</body>
+	<script>
+		Vue.use(VueNumeric.default)
+		var vap = new Vue({el:"#vapp",data:{val:null}});
+	</script>
+</html>
+
+
