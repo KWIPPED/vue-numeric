@@ -308,7 +308,7 @@ export default {
 		 */
 		onFocusHandler (e) {
 			this.$emit('focus', e)
-			if (this.valueNumber === null || this.valueNumber==="") {
+			if (this.valueNumber === null || this.valueNumber==="" || parseFloat(this.valueNumber) === 0) {
 				this.amount = null
 			} else {
 				this.amount = accounting.formatMoney(this.valueNumber, {
